@@ -3,9 +3,9 @@
 #include"player.h"
 #include"ball.h"
 #include <QDebug>
-Player::Player(){
-}
-extern bool ballmove;
+
+Player::Player(){}
+
 extern ball *B;
 extern bool firsmv;
 void Player::keyPressEvent(QKeyEvent *event)

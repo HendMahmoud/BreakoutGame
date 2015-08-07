@@ -13,7 +13,6 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    MyRect.cpp \
     bodygame.cpp \
     demond.cpp \
     health.cpp \
@@ -22,7 +21,6 @@ SOURCES += main.cpp \
     ball.cpp
 
 HEADERS  += \
-    MyRect.h \
     bodygame.h \
     demond.h \
     health.h \
