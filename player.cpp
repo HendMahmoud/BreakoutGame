@@ -1,20 +1,25 @@
 #include<QKeyEvent>
 #include<QGraphicsScene>
 #include"player.h"
+#include"ball.h"
+#include <QDebug>
 Player::Player(){
 }
-
+extern bool ballmove;
+extern ball *B;
+extern bool firsmv;
 void Player::keyPressEvent(QKeyEvent *event)
 {
     if(event->key() == Qt :: Key_Left&& pos().x()-10 >= 0){
         setPos(x()-10 , y());
-    }else if(event->key() == Qt::Key_Right && pos().x()+60 < 800){
+        if(firsmv==0)B->setPos(B->x()-10, B->y());
+    }else if(event->key() == Qt::Key_Right && pos().x()+60 < 1000){
         setPos(x()+10, y());
-    }/*else if(event->key() == Qt:: Key_Space){
-        Bullet *bullet = new Bullet();
-        bullet->setPos(x(), y());
-        scene()->addItem(bullet);
-    }*/
+        if(firsmv==0)B->setPos(B->x()+10, B->y());
+    }
+    else if(event->key() == Qt:: Key_Space){
+        if(firsmv==0)B->moveball();
+    }
 }
 
 //void Player::spawn(){

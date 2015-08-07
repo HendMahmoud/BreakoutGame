@@ -7,6 +7,8 @@
 #include"demond.h"
 #include "player.h"
 #include"health.h"
+#include "ball.h"
+#include "score.h"
 class BodyGame{
 public:
     BodyGame();
@@ -14,6 +16,7 @@ public:
     QGraphicsScene *scene ;
     Player * player  ;
     QGraphicsView * view ;
+    Score *score;
     void show();
 };
 

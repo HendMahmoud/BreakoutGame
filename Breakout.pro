@@ -13,9 +13,21 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    MyRect.cpp
+    MyRect.cpp \
+    bodygame.cpp \
+    demond.cpp \
+    health.cpp \
+    player.cpp \
+    score.cpp \
+    ball.cpp
 
 HEADERS  += \
-    MyRect.h
+    MyRect.h \
+    bodygame.h \
+    demond.h \
+    health.h \
+    player.h \
+    score.h \
+    ball.h
 
 FORMS    += mainwindow.ui
