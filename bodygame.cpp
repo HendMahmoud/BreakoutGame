@@ -17,7 +17,7 @@ void BodyGame :: creatingDiamonds(){
     for (int x=0,l=0;x<7;x++,l+=40){// 7 rows of dimonds the distance between them is 40
         for (int i = 0 , j= 0 ; i < 8; j+= 98,++i) {// 8 columns of dimonds the distance between them is 98
             demond[i]=new Demond();
-            demond[i] ->setPos(35+j,l-50);//100 50
+            demond[i] ->setPos(110+j,l+30);//100 50
             scene ->addItem(demond[i]);
         }
     }
