@@ -31,6 +31,7 @@ void ball:: move(){
     for (int i=0;i<colliding_Items.size();i++){
         if(typeid(*(colliding_Items[i]))==typeid(Demond)){
             scene()->removeItem((colliding_Items[i]));
+            delete colliding_Items[i];
             //setPos((dx==1));
             game ->score->increase();
             if(game->score->getScore() == 56){//the total number of dimonds
