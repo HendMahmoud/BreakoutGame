@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>rectagle_red.png</file>
+        <file>rounded_rectangle_0525.jpg</file>
+        <file>Soccer-Ball-icon.png</file>
+    </qresource>
+</RCC>

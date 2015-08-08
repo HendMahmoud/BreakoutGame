@@ -1,10 +1,10 @@
-#include <QGraphicsRectItem>
+#include <QGraphicsPixmapItem>
 
 
 #ifndef MYRECT_H
 #define MYRECT_H
 
-class Demond:public QGraphicsRectItem
+class Demond:public QGraphicsPixmapItem
 {
 public:
     Demond() ;
