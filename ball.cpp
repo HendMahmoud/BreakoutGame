@@ -33,7 +33,7 @@ void ball:: move(){
             scene()->removeItem((colliding_Items[i]));
             //setPos((dx==1));
             game ->score->increase();
-            if(game->score->getScore() == 56){
+            if(game->score->getScore() == 56){//the total number of dimonds
                 game->scene->clear();
             }
         }
@@ -54,7 +54,7 @@ void ball:: move(){
 
   else if(y()==700){
         game->player->setPos(500 - game->player->boundingRect().width()/2, 700-game ->player->boundingRect().height()-5);
-        setPos(485 , 633);
+        setPos(485 , 633);//position of the ball after falling down
     disconnect(timer,SIGNAL(timeout()),this,SLOT(move()));
     firsmv=0;
     dx = -1 , dy= -1 ;

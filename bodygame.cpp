@@ -13,8 +13,8 @@ void BodyGame :: creatingDiamonds(){
     scene = new QGraphicsScene();
     vector <Demond *>demond(18);
     //MyRect *= new MyRect();
-    for (int x=0,l=0;x<7;x++,l+=50){
-        for (int i = 0 , j= 0 ; i < 8; j+= 100,++i) {
+    for (int x=0,l=0;x<7;x++,l+=40){// 7 rows of dimonds the distance between them is 40
+        for (int i = 0 , j= 0 ; i < 8; j+= 98,++i) {// 8 columns of dimonds the distance between them is 98
             demond[i]=new Demond();
             demond[i] ->setPos(35+j,l-50);//100 50
             scene ->addItem(demond[i]);
@@ -32,7 +32,9 @@ void BodyGame::show()
    score = new Score();
     player = new Player();
     //player->setRect(0,0 , 60 , 10);
-    scene->setSceneRect(0, 0 , 1000, 700);
+    scene->setSceneRect(0, 0 , 1000, 700);//screen size
+    QPixmap pim(":/images/bg_image.jpg");
+    scene->setBackgroundBrush(pim);
     scene -> addItem(player);
     scene -> addItem(B);
     scene -> addItem(score);
