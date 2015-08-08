@@ -17,6 +17,7 @@ public:
     Player * player  ;
     QGraphicsView * view ;
     Score *score;
+    Health *health;
     void show();
 };
 
