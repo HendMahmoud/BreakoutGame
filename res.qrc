@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>rectagle_red.png</file>
+        <file>rounded_rectangle_0525.jpg</file>
+        <file>Soccer-Ball-icon.png</file>
+        <file>bg_image.jpg</file>
+        <file>gray-2.png</file>
+        <file>pc5xoMxcB.png</file>
+    </qresource>
+</RCC>

@@ -29,3 +29,8 @@ HEADERS  += \
     ball.h
 
 FORMS    += mainwindow.ui
+
+RESOURCES += \
+    res.qrc
+
+DISTFILES +=
