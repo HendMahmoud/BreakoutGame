@@ -4,9 +4,9 @@
  Score::Score(QGraphicsItem *parent):QGraphicsTextItem(parent){
     score = 0 ;
     setPos(x(), y());
-    setPlainText("Score :"+QString :: number (score));
-    setDefaultTextColor(Qt:: blue);
-    setFont(QFont("time", 18));
+    setPlainText("Score : "+QString :: number (score));
+    setDefaultTextColor(Qt:: black);
+    setFont(QFont("time", 15));
 }
 
 void Score::increase(){
