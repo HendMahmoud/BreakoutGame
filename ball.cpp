@@ -54,7 +54,7 @@ void ball:: move(){
 
   else if(y()==700){
         game->player->setPos(500 - game->player->boundingRect().width()/2, 700-game ->player->boundingRect().height()-5);
-        setPos(500, 700- boundingRect().height()-15);
+        setPos(485 , 633);
     disconnect(timer,SIGNAL(timeout()),this,SLOT(move()));
     firsmv=0;
     dx = -1 , dy= -1 ;
