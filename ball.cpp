@@ -12,7 +12,7 @@
 
 ball::ball()
 {
-    setPixmap(QPixmap(":/images/Soccer-Ball-icon.png"));
+    setPixmap(QPixmap(":/images/gray-2.png"));
 }
 extern BodyGame * game ;
 QTimer * timer=new QTimer();
