@@ -1,8 +1,8 @@
 #ifndef RECT_H
 #define RECT_H
-#include<QGraphicsRectItem>
+#include<QGraphicsPixmapItem>
 #include<QObject>
-class Player :public QObject,  public QGraphicsRectItem{
+class Player :public QObject,  public QGraphicsPixmapItem{
     Q_OBJECT
     public:
         Player();

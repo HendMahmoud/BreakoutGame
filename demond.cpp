@@ -1,6 +1,8 @@
 #include "demond.h"
 #include <QKeyEvent>
-Demond :: Demond(){
+Demond :: Demond()
+{
+    setPixmap(QPixmap(":/images/rectagle_red.png"));
 }
 
 //void MyRect::keyPressEvent(QKeyEvent *event)

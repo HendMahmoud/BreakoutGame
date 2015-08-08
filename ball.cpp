@@ -12,7 +12,7 @@
 
 ball::ball()
 {
-
+    setPixmap(QPixmap(":/images/gray-2.png"));
 }
 extern BodyGame * game ;
 QTimer * timer=new QTimer();
@@ -33,7 +33,7 @@ void ball:: move(){
             scene()->removeItem((colliding_Items[i]));
             //setPos((dx==1));
             game ->score->increase();
-            if(game->score->getScore() == 45){
+            if(game->score->getScore() == 56){//the total number of dimonds
                 game->scene->clear();
             }
         }
@@ -53,14 +53,14 @@ void ball:: move(){
     }
 
   else if(y()==700){
-        game->player->setPos(500 - game->player->rect().width()/2, 700-game ->player->rect().height()-5);
-        setPos(500, 700- rect().height()-15);
+        game->player->setPos(500 - game->player->boundingRect().width()/2, 700-game ->player->boundingRect().height()-5);
+        setPos(485 , 633);//position of the ball after falling down
     disconnect(timer,SIGNAL(timeout()),this,SLOT(move()));
     firsmv=0;
     dx = -1 , dy= -1 ;
     }
 
-   else if(x()==1000){dx=-1*dx;
+   else if(x()==970){dx=-1*dx;
         setPos(x()+dx,y()+dy);
     }
     else {setPos(x()+dx,y()+dy);firsmv=1;}
