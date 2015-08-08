@@ -11,11 +11,11 @@ extern bool firsmv;
 void Player::keyPressEvent(QKeyEvent *event)
 {
     if(event->key() == Qt :: Key_Left&& pos().x()-10 >= 0){
-        setPos(x()-10 , y());
-        if(firsmv==0)B->setPos(B->x()-10, B->y());
-    }else if(event->key() == Qt::Key_Right && pos().x()+60 < 1000){
-        setPos(x()+10, y());
-        if(firsmv==0)B->setPos(B->x()+10, B->y());
+        setPos(x()-15 , y());
+        if(firsmv==0)B->setPos(B->x()-15, B->y());
+    }else if(event->key() == Qt::Key_Right && pos().x()+100 < 1000){
+        setPos(x()+15, y());
+        if(firsmv==0)B->setPos(B->x()+15, B->y());
     }
     else if(event->key() == Qt:: Key_Space){
         if(firsmv==0)B->moveball();

@@ -28,23 +28,22 @@ void BodyGame::show()
 {
     creatingDiamonds();
     B = new ball();
-   B->setRect(0,0,10,10);
-   score = new Score();
+    B->setRect(0,0,10,10);
+    score = new Score();
     player = new Player();
-    player->setRect(0,0 , 60 , 10);
+    player->setRect(0,0 , 100 , 10);
     scene->setSceneRect(0, 0 , 1000, 700);
     scene -> addItem(player);
     scene -> addItem(B);
     scene -> addItem(score);
     player -> setFlag(QGraphicsRectItem::ItemIsFocusable);
     player -> setFocus();
-     view = new QGraphicsView(scene);
-     view->setFixedSize(1000, 700);
-     player->setPos(view->width()/2 - player->rect().width()/2, view->height()-player->rect().height()-5);
-     B->setPos(view->width()/2, view->height()- B->rect().height()-15);
-        view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-
-        view -> show();
+    view = new QGraphicsView(scene);
+    view->setFixedSize(1000, 700);
+    player->setPos(view->width()/2 - player->rect().width()/2, view->height()-player->rect().height()-5);
+    B->setPos(view->width()/2, view->height()- B->rect().height()-15);
+    view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    view -> show();
 
 }
