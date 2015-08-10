@@ -12,7 +12,7 @@ BodyGame::BodyGame(){
 
 void BodyGame :: creatingDiamonds(){
     scene = new QGraphicsScene();
-    vector <Demond *>demond(18);
+    vector <Demond *>demond(56);
     //MyRect *= new MyRect();
     for (int x=0,l=0;x<7;x++,l+=40){// 7 rows of dimonds the distance between them is 40
         for (int i = 0 , j= 0 ; i < 8; j+= 98,++i) {// 8 columns of dimonds the distance between them is 98
