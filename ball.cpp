@@ -10,9 +10,12 @@
 #include <QGraphicsScene>
 #include "bodygame.h"
 
+
+float ball::speed =1;
 ball::ball()
 {
     setPixmap(QPixmap(":/images/gray-2.png"));
+
 }
 extern BodyGame * game ;
 QTimer * timer=new QTimer();
@@ -20,7 +23,9 @@ QTimer * timer=new QTimer();
 void ball::moveball()
 {
     connect(timer,SIGNAL(timeout()),this,SLOT(move()));
-    timer->start(3);
+    if(speed==1)
+    timer->start(7);
+
 }
 
 int dx=-1,dy=-1;
@@ -33,6 +38,11 @@ void ball:: move(){
             scene()->removeItem((colliding_Items[i]));
             delete colliding_Items[i];
             //setPos((dx==1));
+           if(game->score->getScore()%20==0&&timer->interval()-speed>0)
+            {
+              timer->setInterval(timer->interval()-speed);
+              speed+=0.5;
+            }
             game ->score->increase();
             if(game->score->getScore() == 56){//the total number of dimonds
                 game->scene->clear();
