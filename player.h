@@ -9,6 +9,8 @@ class Player :public QObject,  public QGraphicsPixmapItem{
         void keyPressEvent(QKeyEvent *event);
 //    public slots :
 //        void spawn();
+private:
+        int spaces;
 };
 
 #endif // RECT_H

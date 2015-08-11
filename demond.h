@@ -8,7 +8,6 @@ class Demond:public QGraphicsPixmapItem
 {
 public:
     Demond() ;
-    //void keyPressEvent(QKeyEvent *event);
 };
 
 #endif // MYRECT_H

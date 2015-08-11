@@ -9,6 +9,8 @@
 #include <demond.h>
 #include <QGraphicsScene>
 #include "bodygame.h"
+#include <QFont>
+#include <QGraphicsTextItem>
 
 
 float ball::speed =1;
@@ -45,7 +47,8 @@ void ball:: move(){
             }
             game ->score->increase();
             if(game->score->getScore() == 56){//the total number of dimonds
-                game->scene->clear();
+                disconnect(timer,SIGNAL(timeout()),this,SLOT(move()));
+                game->finishView();
             }
         }
         else if (typeid(*(colliding_Items[i]))==typeid(Player)){

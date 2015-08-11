@@ -18,7 +18,8 @@ SOURCES += main.cpp \
     health.cpp \
     player.cpp \
     score.cpp \
-    ball.cpp
+    ball.cpp \
+    startmenu.cpp
 
 HEADERS  += \
     bodygame.h \
@@ -26,7 +27,8 @@ HEADERS  += \
     health.h \
     player.h \
     score.h \
-    ball.h
+    ball.h \
+    startmenu.h
 
 FORMS    += mainwindow.ui
 
