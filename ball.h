@@ -9,6 +9,7 @@ class ball :public QObject,public QGraphicsPixmapItem
 public:
     ball();
     void moveball();
+   static float speed ;
 public slots:
     void move();
 };
