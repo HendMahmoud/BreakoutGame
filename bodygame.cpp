@@ -108,4 +108,5 @@ void BodyGame::userinput(QString s){
     scene->addItem(text);
     view->setScene(scene);
     view -> show();
+
 }
