@@ -26,13 +26,15 @@ BodyGame::BodyGame(){
 }
 
 void BodyGame :: creatingDiamonds(){
+
     Demond *demond;
     //MyRect *= new MyRect();
     for (int x=0,l=0;x<7;x++,l+=40){// 7 rows of dimonds the distance between them is 40
         for (int i = 0 , j= 0 ; i < 8; j+= 98,++i) {// 8 columns of dimonds the distance between them is 98
             demond=new Demond();
-            demond->setPos(35+j,l-50);//100 50
+            demond->setPos(110+j,l+30);//100 50
             scene ->addItem(demond);
+
         }
     }
  }
@@ -41,6 +43,7 @@ ball * B;
 extern bool ballmove;
 void BodyGame::show()
 {
+
     if(startgame==0){
         StartMenu *startmenu =new StartMenu();
         scene->addItem(startmenu);
@@ -71,6 +74,7 @@ void BodyGame::show()
         view -> show();
     }
 }
+
 void BodyGame::finishView()
 {
     //player->flags();//QGraphicsRectItem::ItemIsFocusable);
