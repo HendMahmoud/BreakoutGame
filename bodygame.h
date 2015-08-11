@@ -11,13 +11,17 @@
 #include "score.h"
 class BodyGame{
 public:
-    BodyGame();
-    void creatingDiamonds() ;
     QGraphicsScene *scene ;
     Player * player  ;
     QGraphicsView * view ;
     Score *score;
+    bool startgame;
+
+    BodyGame();
+    void creatingDiamonds() ;
     void show();
+    void finishView();
+    void userinput(QString);
 };
 
 #endif // BODYGAME_H

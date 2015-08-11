@@ -1,23 +1,36 @@
+#include <bits/stdc++.h>
+#include <QDebug>
+#include <QGraphicsTextItem>
+#include <QGraphicsScene>
+#include <QFont>
 #include "bodygame.h"
 #include "ball.h"
-#include<QDebug>
-#include <vector>
+#include "startmenu.h"
+
 using namespace std ;
 
-
 BodyGame::BodyGame(){
- // constructor
+    startgame=0;
+    scene = new QGraphicsScene();
+    scene->setSceneRect(0, 0 , 1000, 700);//screen size
+    QPixmap pim(":/images/bg_image.jpg");
+    scene->setBackgroundBrush(pim);
+    view = new QGraphicsView();
+    player = new Player();
+    score = new Score();
+    view->setFixedSize(1000, 700);
+    view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 }
 
 void BodyGame :: creatingDiamonds(){
-    scene = new QGraphicsScene();
-    vector <Demond *>demond(18);
+    Demond *demond;
     //MyRect *= new MyRect();
     for (int x=0,l=0;x<7;x++,l+=40){// 7 rows of dimonds the distance between them is 40
         for (int i = 0 , j= 0 ; i < 8; j+= 98,++i) {// 8 columns of dimonds the distance between them is 98
-            demond[i]=new Demond();
-            demond[i] ->setPos(35+j,l-50);//100 50
-            scene ->addItem(demond[i]);
+            demond=new Demond();
+            demond->setPos(35+j,l-50);//100 50
+            scene ->addItem(demond);
         }
     }
  }
@@ -26,32 +39,66 @@ ball * B;
 extern bool ballmove;
 void BodyGame::show()
 {
-    creatingDiamonds();
-    B = new ball();
-    //B->setRect(0,0,10,10);
-    score = new Score();
-    player = new Player();
-    //player->setRect(0,0 , 100 , 10);
-    scene->setSceneRect(0, 0 , 1000, 700);//screen size
-    QPixmap pim(":/images/bg_image.jpg");
-    scene->setBackgroundBrush(pim);
-//>>>>>>> 78edc2b66d9b2687f004fd0047025e8ef1d79379
 
+    if(startgame==0){
+        StartMenu *startmenu =new StartMenu();
+        scene->addItem(startmenu);
+        startmenu->viewit();
+        startmenu->setFlag(QGraphicsRectItem::ItemIsFocusable);
+        startmenu-> setFocus();
+        view->setScene(scene);
+        view -> show();
+    }
+    else if(startgame==1){
+        scene->clear();
+        creatingDiamonds();
+        B = new ball();
 
-    scene -> addItem(player);
-    scene -> addItem(B);
-    scene -> addItem(score);
-    player -> setFlag(QGraphicsRectItem::ItemIsFocusable);
-    player -> setFocus();
+        scene -> addItem(player);
+        scene -> addItem(B);
+        scene -> addItem(score);
+        player -> setFlag(QGraphicsRectItem::ItemIsFocusable);
+        player -> setFocus();
 
-    view = new QGraphicsView(scene);
-    view->setFixedSize(1000, 700);
-    player->setPos(view->width()/2 - player->boundingRect().width()/2, view->height()-player->boundingRect().height()-5);
-    //B->setPos(view->width()/2, view->height()- B->boundingRect().height()-15);
-    B->setPos(view->width()/2-10, view->height()-67);
-    view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        player->setPos(view->width()/2 - player->boundingRect().width()/2, view->height()-player->boundingRect().height()-5);
+        //B->setPos(view->width()/2, view->height()- B->boundingRect().height()-15);
+        B->setPos(view->width()/2-10, view->height()-67);
+        view->setScene(scene);
+        view -> show();
+    }
+}
 
+void BodyGame::finishView()
+{
+    //player->flags();//QGraphicsRectItem::ItemIsFocusable);
+    //this -> setFlag(QGraphicsRectItem::ItemFocusable);
+    //player -> setFocus();
+//    scene->clear();
+    QGraphicsTextItem * text =new QGraphicsTextItem();
+    text->setPos(0,this->view->height()/4);
+    text->setPlainText("\t\t\t\tYOU WIN");
+    text->setDefaultTextColor(Qt:: blue);
+    text->setFont(QFont("time", 40));
+    scene->addItem(text);
+    QGraphicsTextItem * text2 =new QGraphicsTextItem();
+    text2->setPos(0,this->view->height()/3);
+    QString s;
+    view->alignment();
+    text2->setPlainText("\n\t\t\t\ttype your user name: "+(QString)s);
+    text2->setDefaultTextColor(Qt:: black);
+    text2->setFont(QFont("time", 20));
+    scene->addItem(text2);
+    //scene->addItem(s);
+    view->setScene(scene);
     view -> show();
-
+}
+void BodyGame::userinput(QString s){
+    QGraphicsTextItem * text =new QGraphicsTextItem();
+    text->setPos(this->view->width()-this->view->width()/3-50,this->view->height()/3);
+    text->setPlainText("\n"+(QString)s);
+    text->setDefaultTextColor(Qt:: black);
+    text->setFont(QFont("time", 20));
+    scene->addItem(text);
+    view->setScene(scene);
+    view -> show();
 }
