@@ -4,6 +4,7 @@
 #include <QGraphicsScene>
 #include <QFont>
 #include "bodygame.h"
+
 #include "ball.h"
 #include "startmenu.h"
 
@@ -18,6 +19,7 @@ BodyGame::BodyGame(){
     view = new QGraphicsView();
     player = new Player();
     score = new Score();
+    health = new Health();
     view->setFixedSize(1000, 700);
     view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -39,7 +41,6 @@ ball * B;
 extern bool ballmove;
 void BodyGame::show()
 {
-
     if(startgame==0){
         StartMenu *startmenu =new StartMenu();
         scene->addItem(startmenu);
@@ -57,17 +58,19 @@ void BodyGame::show()
         scene -> addItem(player);
         scene -> addItem(B);
         scene -> addItem(score);
+        scene -> addItem(health);
         player -> setFlag(QGraphicsRectItem::ItemIsFocusable);
         player -> setFocus();
 
         player->setPos(view->width()/2 - player->boundingRect().width()/2, view->height()-player->boundingRect().height()-5);
         //B->setPos(view->width()/2, view->height()- B->boundingRect().height()-15);
+
         B->setPos(view->width()/2-10, view->height()-67);
+        //B->setPos(view->width()/2-22, view->height()-63);
         view->setScene(scene);
         view -> show();
     }
 }
-
 void BodyGame::finishView()
 {
     //player->flags();//QGraphicsRectItem::ItemIsFocusable);
