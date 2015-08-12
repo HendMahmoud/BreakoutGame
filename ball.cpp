@@ -56,34 +56,44 @@ void ball:: move(){
             setPos(x()+dx, y()+dy);
         }
     }
-    if(x()==0&&y()==0){dx=-1*dx;dy=-1*dy;
+    if(x()==0&&y()==0)
+    {
+        dx=-1*dx;dy=-1*dy;
         setPos(x()+dx,y()+dy);
     }
-     else if(x()==0){dx=-1*dx;
+     else if(x()==0)//left edge
+    {
+        dx=-1*dx;
         setPos(x()+dx,y()+dy);
     }
-   else if(y()==0){dy=-1*dy;
+   else if(y()==0)//up
+    {
+        dy=-1*dy;
         setPos(x()+dx,y()+dy);
     }
 
   else if(y()==700){//falling
         game->player->setPos(500 - game->player->boundingRect().width()/2, 700-game ->player->boundingRect().height()-5);
-        setPos(478 , 700-63);//position of the ball after falling down
+        setPos(490 , 640);//position of the ball after falling down
     disconnect(timer,SIGNAL(timeout()),this,SLOT(move()));
     firsmv=0;
     dx = -1 , dy= -1 ;
     game ->health->decrease();
-    if(game->health->getHealth() == 0){//the total number of dimonds
+    if(game->health->getHealth() == 0){
         game->scene->clear();
     }
     }
 
-   else if(x()==970)
+   else if(x()==970)//right edge
     {
 
         dx=-1*dx;
         setPos(x()+dx,y()+dy);
     }
-    else {setPos(x()+dx,y()+dy);firsmv=1;}
+
+    else//moving
+    {
+        setPos(x()+dx,y()+dy);firsmv=1;
+    }
     return;
 }

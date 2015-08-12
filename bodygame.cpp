@@ -68,7 +68,7 @@ void BodyGame::show()
         player->setPos(view->width()/2 - player->boundingRect().width()/2, view->height()-player->boundingRect().height()-5);
         //B->setPos(view->width()/2, view->height()- B->boundingRect().height()-15);
 
-        B->setPos(view->width()/2-10, view->height()-67);
+        B->setPos(view->width()/2-10, view->height()-60);
         //B->setPos(view->width()/2-22, view->height()-63);
         view->setScene(scene);
         view -> show();

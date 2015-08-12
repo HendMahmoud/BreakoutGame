@@ -12,6 +12,7 @@ bool ballmove=0;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    a.setApplicationName("Breakout Game");
     srand((unsigned)time(0));
 
     game = new BodyGame();

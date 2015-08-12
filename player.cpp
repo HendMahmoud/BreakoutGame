@@ -12,7 +12,7 @@ Player::Player()
 }
 extern BodyGame *game;
 extern ball *B;
-extern bool firsmv;
+extern bool firsmv;//to let the ball change it is position when the player change
 void Player::keyPressEvent(QKeyEvent *event)
 {
     if(event->key() == Qt :: Key_Left&& pos().x()-10 >= 0){
