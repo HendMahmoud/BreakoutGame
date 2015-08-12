@@ -74,6 +74,7 @@ void BodyGame::show()
         view -> show();
     }
 }
+
 void BodyGame::finishView()
 {
     //player->flags();//QGraphicsRectItem::ItemIsFocusable);

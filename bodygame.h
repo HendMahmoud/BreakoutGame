@@ -16,7 +16,6 @@ public:
     QGraphicsView * view ;
     Score *score;
 
-
     bool startgame;
 
     BodyGame();
