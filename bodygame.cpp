@@ -44,7 +44,8 @@ extern bool ballmove;
 void BodyGame::show()
 {
 
-    if(startgame==0){
+    if(startgame==0)//start menu
+    {
         StartMenu *startmenu =new StartMenu();
         scene->addItem(startmenu);
         startmenu->viewit();
@@ -53,7 +54,8 @@ void BodyGame::show()
         view->setScene(scene);
         view -> show();
     }
-    else if(startgame==1){
+    else if(startgame==1)// game start
+    {
         scene->clear();
         creatingDiamonds();
         B = new ball();

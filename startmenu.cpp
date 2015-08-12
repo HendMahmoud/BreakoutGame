@@ -43,9 +43,10 @@ void StartMenu::keyPressEvent(QKeyEvent *event)
     }
     if(event->key() == Qt :: Key_Enter){
         game->startgame=1;
-        if(y()==0)
+        if(y()==0)//new game
             game->show();
-        //else if(y()==38)
-        //else if(y()==76)
+        //else if(y()==38)//how to play
+        //else if(y()==76)//about
+
     }
 }

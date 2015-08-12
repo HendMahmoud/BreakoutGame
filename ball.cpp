@@ -35,9 +35,16 @@ bool firsmv = 0 ;
 
 void ball:: move(){
     QList <QGraphicsItem*> colliding_Items=collidingItems();
-    for (int i=0;i<colliding_Items.size();i++){
-        if(typeid(*(colliding_Items[i]))==typeid(Demond)){
+    for (int i=0;i<colliding_Items.size();i++)
+    {
+        if(typeid(*(colliding_Items[i]))==typeid(Demond))
+        {
+
             scene()->removeItem((colliding_Items[i]));
+
+            if(firsmv)dy = -1*dy;
+            setPos(x()+dx, y()+dy);
+
             delete colliding_Items[i];
             //setPos((dx==1));
            if(game->score->getScore()%20==0&&timer->interval()-speed>0)
