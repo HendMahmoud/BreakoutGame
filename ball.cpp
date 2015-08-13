@@ -40,13 +40,24 @@ void ball:: move(){
         if(typeid(*(colliding_Items[i]))==typeid(Demond))
         {
 
-            scene()->removeItem((colliding_Items[i]));
-
-            if(firsmv)dy = -1*dy;
-            setPos(x()+dx, y()+dy);
-
-            delete colliding_Items[i];
-            //setPos((dx==1));
+            if(y()==(colliding_Items[i]->y()+41)||y()+17==(colliding_Items[i]->y())){//hit from down and up
+                            dy = -1*dy;
+                            setPos(x()+dx, y()+dy);
+                            scene()->removeItem((colliding_Items[i]));
+                            delete colliding_Items[i];
+                        }
+                        else if(x()+18==(colliding_Items[i]->x())||x()==(colliding_Items[i]->x())+100){//hit from right and left
+                            dx= -1*dx;
+                            setPos(x()+dx, y()+dy);
+                            scene()->removeItem((colliding_Items[i]));
+                            delete colliding_Items[i];
+                        }
+                        else {//hit from corners
+                            dy = -1*dy;dx= -1*dx;
+                            setPos(x()+dx, y()+dy);
+                            scene()->removeItem((colliding_Items[i]));
+                            delete colliding_Items[i];
+                        }
            if(game->score->getScore()%20==0&&timer->interval()-speed>0)
             {
               timer->setInterval(timer->interval()-speed);
