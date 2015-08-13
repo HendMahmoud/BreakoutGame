@@ -11,7 +11,7 @@
 #include "bodygame.h"
 #include <QFont>
 #include <QGraphicsTextItem>
-
+#include<QMediaPlayer>
 
 float ball::speed =1;
 ball::ball()
@@ -86,7 +86,15 @@ void ball:: move(){
     firsmv=0;
     dx = -1 , dy= -1 ;
     game ->health->decrease();
-    if(game->health->getHealth() == 0){
+    QMediaPlayer *fallBall = new QMediaPlayer();
+    if(game->health->getHealth() > 0){
+
+         fallBall->setMedia(QUrl("qrc:/sounds/playerDie.wav"));
+         fallBall->play();
+    }
+   else if(game->health->getHealth() == 0){
+    fallBall->setMedia(QUrl("qrc:/sounds/GameOver.wav"));
+    fallBall->play();
         game->scene->clear();
     }
     }
