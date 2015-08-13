@@ -66,6 +66,10 @@ void ball:: move(){
             game ->score->increase();
             if(game->score->getScore() == 56){//the total number of dimonds
                 disconnect(timer,SIGNAL(timeout()),this,SLOT(move()));
+                // when Win
+                QMediaPlayer * win = new QMediaPlayer();
+                win->setMedia(QUrl("qrc:/sounds/winner"));
+                win->play();
                 game->finishView();
             }
         }
@@ -99,8 +103,8 @@ void ball:: move(){
     game ->health->decrease();
     QMediaPlayer *fallBall = new QMediaPlayer();
     if(game->health->getHealth() > 0){
-
-         fallBall->setMedia(QUrl("qrc:/sounds/playerDie.wav"));
+        // when fall
+         fallBall->setMedia(QUrl("qrc:/sounds/fall.wav"));
          fallBall->play();
     }
    else if(game->health->getHealth() == 0){
