@@ -44,7 +44,8 @@ extern bool ballmove;
 void BodyGame::show()
 {
 
-    if(startgame==0){
+    if(startgame==0)//start menu
+    {
         StartMenu *startmenu =new StartMenu();
         scene->addItem(startmenu);
         startmenu->viewit();
@@ -53,7 +54,8 @@ void BodyGame::show()
         view->setScene(scene);
         view -> show();
     }
-    else if(startgame==1){
+    else if(startgame==1)// game start
+    {
         scene->clear();
         creatingDiamonds();
         B = new ball();
@@ -68,12 +70,13 @@ void BodyGame::show()
         player->setPos(view->width()/2 - player->boundingRect().width()/2, view->height()-player->boundingRect().height()-5);
         //B->setPos(view->width()/2, view->height()- B->boundingRect().height()-15);
 
-        B->setPos(view->width()/2-10, view->height()-67);
+        B->setPos(view->width()/2-10, view->height()-60);
         //B->setPos(view->width()/2-22, view->height()-63);
         view->setScene(scene);
         view -> show();
     }
 }
+
 void BodyGame::finishView()
 {
     //player->flags();//QGraphicsRectItem::ItemIsFocusable);

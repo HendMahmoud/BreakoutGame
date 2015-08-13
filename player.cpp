@@ -16,11 +16,13 @@ extern bool firsmv;//to let the ball change it is position when the player chang
 void Player::keyPressEvent(QKeyEvent *event)
 {
     if(event->key() == Qt :: Key_Left&& pos().x()-10 >= 0){
-        setPos(x()-35 , y());
-        if(firsmv==0)B->setPos(B->x()-35, B->y());
+
+        setPos(x()-45 , y());
+        if(firsmv==0)B->setPos(B->x()-45, B->y());
     }else if(event->key() == Qt::Key_Right && pos().x()+60 < 860){
-        setPos(x()+35, y());
-        if(firsmv==0)B->setPos(B->x()+35, B->y());
+        setPos(x()+45, y());
+        if(firsmv==0)B->setPos(B->x()+45, B->y());
+
     }
     else if(event->key() == Qt:: Key_Space){
         if(firsmv==0)B->moveball();
