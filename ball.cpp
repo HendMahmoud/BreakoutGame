@@ -38,6 +38,7 @@ void ball:: move(){
     for (int i=0;i<colliding_Items.size();i++)
     {
         if(typeid(*(colliding_Items[i]))==typeid(Demond))
+
         {
 
             if(y()==(colliding_Items[i]->y()+41)||y()+17==(colliding_Items[i]->y())){//hit from down and up
@@ -59,9 +60,10 @@ void ball:: move(){
                             delete colliding_Items[i];
                         }
            if(game->score->getScore()%20==0&&timer->interval()-speed>0)
+
             {
-              timer->setInterval(timer->interval()-speed);
-              speed+=0.5;
+                timer->setInterval(timer->interval()-speed);
+                speed+=0.5;
             }
             game ->score->increase();
             if(game->score->getScore() == 56){//the total number of dimonds
@@ -97,6 +99,7 @@ void ball:: move(){
     firsmv=0;
     dx = -1 , dy= -1 ;
     game ->health->decrease();
+
     QMediaPlayer *fallBall = new QMediaPlayer();
     if(game->health->getHealth() > 0){
 
@@ -106,6 +109,7 @@ void ball:: move(){
    else if(game->health->getHealth() == 0){
     fallBall->setMedia(QUrl("qrc:/sounds/GameOver.wav"));
     fallBall->play();
+
         game->scene->clear();
     }
     }
