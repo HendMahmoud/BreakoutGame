@@ -12,15 +12,15 @@ Player::Player()
 }
 extern BodyGame *game;
 extern ball *B;
-extern bool firsmv;
+extern bool firsmv;//to let the ball change it is position when the player change
 void Player::keyPressEvent(QKeyEvent *event)
 {
     if(event->key() == Qt :: Key_Left&& pos().x()-10 >= 0){
-        setPos(x()-15 , y());
-        if(firsmv==0)B->setPos(B->x()-15, B->y());
+        setPos(x()-35 , y());
+        if(firsmv==0)B->setPos(B->x()-35, B->y());
     }else if(event->key() == Qt::Key_Right && pos().x()+60 < 860){
-        setPos(x()+15, y());
-        if(firsmv==0)B->setPos(B->x()+15, B->y());
+        setPos(x()+35, y());
+        if(firsmv==0)B->setPos(B->x()+35, B->y());
     }
     else if(event->key() == Qt:: Key_Space){
         if(firsmv==0)B->moveball();
