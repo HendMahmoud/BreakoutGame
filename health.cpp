@@ -1,7 +1,7 @@
 #include "health.h"
 #include<QFont>
 Health::Health(QGraphicsItem *parent):QGraphicsTextItem(parent){
-    health = 50;
+    health = 0;
     setPos(x(), y()+35);
     setPlainText("Health : "+QString:: number(health));
    setFont(QFont("time",15));// For type of font and the size
