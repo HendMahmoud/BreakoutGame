@@ -9,6 +9,8 @@
     <qresource prefix="/sounds">
         <file>GameOver.wav</file>
         <file>mouseDown.mp3</file>
-        <file>playerDie.wav</file>
+        <file>fall.wav</file>
+        <file>hitBall.wav</file>
+        <file>winner.wav</file>
     </qresource>
 </RCC>

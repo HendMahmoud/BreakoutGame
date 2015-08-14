@@ -4,7 +4,7 @@
 #include"ball.h"
 #include <QDebug>
 #include "bodygame.h"
-
+#include<QMediaPlayer>
 Player::Player()
 {
     spaces=0;
@@ -23,6 +23,9 @@ void Player::keyPressEvent(QKeyEvent *event)
         if(firsmv==0)game->B->setPos(game->B->x()+45, game->B->y());
     }
     else if(event->key() == Qt:: Key_Space){
+        QMediaPlayer * hitBall = new QMediaPlayer();
+        hitBall->setMedia(QUrl("qrc:/sounds/hitBall.wav"));
+        hitBall->play();
         if(firsmv==0)game->B->moveball();
     }
     else if(event->key() == Qt:: Key_Enter){
