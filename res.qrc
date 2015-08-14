@@ -6,4 +6,9 @@
         <file>pc5xoMxcB.png</file>
         <file>gray-2.png</file>
     </qresource>
+    <qresource prefix="/sounds">
+        <file>GameOver.wav</file>
+        <file>mouseDown.mp3</file>
+        <file>playerDie.wav</file>
+    </qresource>
 </RCC>

@@ -24,6 +24,17 @@ BodyGame::BodyGame(){
     view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 }
+extern bool ballmove;
+
+BodyGame::~BodyGame()
+{
+    delete scene;
+    delete view;
+    delete player;
+    delete score;
+    delete health;
+    delete B;
+}
 
 void BodyGame :: creatingDiamonds(){
 
@@ -39,8 +50,7 @@ void BodyGame :: creatingDiamonds(){
     }
  }
 
-ball * B;
-extern bool ballmove;
+
 void BodyGame::show()
 {
 
@@ -68,10 +78,8 @@ void BodyGame::show()
         player -> setFocus();
 
         player->setPos(view->width()/2 - player->boundingRect().width()/2, view->height()-player->boundingRect().height()-5);
-        //B->setPos(view->width()/2, view->height()- B->boundingRect().height()-15);
 
         B->setPos(view->width()/2-10, view->height()-60);
-        //B->setPos(view->width()/2-22, view->height()-63);
         view->setScene(scene);
         view -> show();
     }
@@ -85,19 +93,18 @@ void BodyGame::finishView()
 //    scene->clear();
     QGraphicsTextItem * text =new QGraphicsTextItem();
     text->setPos(0,this->view->height()/4);
-    text->setPlainText("\t\t\t\tYOU WIN");
+    if(health->getHealth()==0)
+        text->setPlainText("\t\t\t\tGAME OVER");
+    else text->setPlainText("\t\t\t\tYOU WIN");
     text->setDefaultTextColor(Qt:: blue);
     text->setFont(QFont("time", 40));
     scene->addItem(text);
     QGraphicsTextItem * text2 =new QGraphicsTextItem();
     text2->setPos(0,this->view->height()/3);
-    QString s;
-    view->alignment();
-    text2->setPlainText("\n\t\t\t\ttype your user name: "+(QString)s);
+    text2->setPlainText("\n\t\t\t\ttype your user name: ");
     text2->setDefaultTextColor(Qt:: black);
     text2->setFont(QFont("time", 20));
     scene->addItem(text2);
-    //scene->addItem(s);
     view->setScene(scene);
     view -> show();
 }

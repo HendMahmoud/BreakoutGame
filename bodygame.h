@@ -17,8 +17,11 @@ public:
     Score *score;
 
     bool startgame;
+    ball * B;
+
 
     BodyGame();
+    ~BodyGame();
     void creatingDiamonds() ;
 
     Health *health;

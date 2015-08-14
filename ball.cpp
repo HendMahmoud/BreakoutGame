@@ -17,7 +17,7 @@ float ball::speed =1;
 ball::ball()
 {
     setPixmap(QPixmap(":/images/gray-2.png"));
-
+    fallBall = new QMediaPlayer();
 }
 extern BodyGame * game ;
 QTimer * timer=new QTimer();
@@ -39,29 +39,28 @@ void ball:: move(){
     {
         if(typeid(*(colliding_Items[i]))==typeid(Demond))
         {
-
             if(y()==(colliding_Items[i]->y()+41)||y()+17==(colliding_Items[i]->y())){//hit from down and up
-                            dy = -1*dy;
-                            setPos(x()+dx, y()+dy);
-                            scene()->removeItem((colliding_Items[i]));
-                            delete colliding_Items[i];
-                        }
-                        else if(x()+18==(colliding_Items[i]->x())||x()==(colliding_Items[i]->x())+100){//hit from right and left
-                            dx= -1*dx;
-                            setPos(x()+dx, y()+dy);
-                            scene()->removeItem((colliding_Items[i]));
-                            delete colliding_Items[i];
-                        }
-                        else {//hit from corners
-                            dy = -1*dy;dx= -1*dx;
-                            setPos(x()+dx, y()+dy);
-                            scene()->removeItem((colliding_Items[i]));
-                            delete colliding_Items[i];
-                        }
-           if(game->score->getScore()%20==0&&timer->interval()-speed>0)
+                dy = -1*dy;
+                setPos(x()+dx, y()+dy);
+                scene()->removeItem((colliding_Items[i]));
+                delete colliding_Items[i];
+            }
+            else if(x()+18==(colliding_Items[i]->x())||x()==(colliding_Items[i]->x())+100){//hit from right and left
+                dx= -1*dx;
+                setPos(x()+dx, y()+dy);
+                scene()->removeItem((colliding_Items[i]));
+                delete colliding_Items[i];
+            }
+            else {//hit from corners
+                dy = -1*dy;dx= -1*dx;
+                setPos(x()+dx, y()+dy);
+                scene()->removeItem((colliding_Items[i]));
+                delete colliding_Items[i];
+            }
+            if(game->score->getScore()%20==0&&timer->interval()-speed>0)
             {
-              timer->setInterval(timer->interval()-speed);
-              speed+=0.5;
+                timer->setInterval(timer->interval()-speed);
+                speed+=0.5;
             }
             game ->score->increase();
             if(game->score->getScore() == 56){//the total number of dimonds
@@ -70,8 +69,16 @@ void ball:: move(){
             }
         }
         else if (typeid(*(colliding_Items[i]))==typeid(Player)){
-            if(firsmv)dy = -1*dy;
-            setPos(x()+dx, y()+dy);
+            if(firsmv&&dy>0){qDebug()<<x()<<' '<<colliding_Items[i]->x();
+                if(y()+21==colliding_Items[i]->y())
+                    dy = -1*dy;
+                else if(x()+21==colliding_Items[i]->x()||x()==colliding_Items[i]->x()+187)//right or left of the player
+                    dx*=-1;
+                else
+                    dx*=-1,dy*=-1;
+
+                setPos(x()+dx, y()+dy);
+            }
         }
     }
     if(x()==0&&y()==0)
@@ -97,22 +104,22 @@ void ball:: move(){
     firsmv=0;
     dx = -1 , dy= -1 ;
     game ->health->decrease();
-    QMediaPlayer *fallBall = new QMediaPlayer();
+
     if(game->health->getHealth() > 0){
 
          fallBall->setMedia(QUrl("qrc:/sounds/playerDie.wav"));
          fallBall->play();
     }
-   else if(game->health->getHealth() == 0){
-    fallBall->setMedia(QUrl("qrc:/sounds/GameOver.wav"));
-    fallBall->play();
+    else if(game->health->getHealth() == 0){
+        fallBall->setMedia(QUrl("qrc:/sounds/GameOver.wav"));
+        fallBall->play();
         game->scene->clear();
-    }
+        game->finishView();
+        }
     }
 
    else if(x()==970)//right edge
     {
-
         dx=-1*dx;
         setPos(x()+dx,y()+dy);
     }

@@ -11,19 +11,26 @@ Player::Player()
     setPixmap(QPixmap(":/images/rounded_rectangle_0525.jpg"));
 }
 extern BodyGame *game;
-extern ball *B;
+
 extern bool firsmv;//to let the ball change it is position when the player change
 void Player::keyPressEvent(QKeyEvent *event)
 {
     if(event->key() == Qt :: Key_Left&& pos().x()-10 >= 0){
         setPos(x()-45 , y());
-        if(firsmv==0)B->setPos(B->x()-45, B->y());
+        if(firsmv==0)game->B->setPos(game->B->x()-45, game->B->y());
     }else if(event->key() == Qt::Key_Right && pos().x()+60 < 860){
         setPos(x()+45, y());
-        if(firsmv==0)B->setPos(B->x()+45, B->y());
+        if(firsmv==0)game->B->setPos(game->B->x()+45, game->B->y());
     }
     else if(event->key() == Qt:: Key_Space){
-        if(firsmv==0)B->moveball();
+        if(firsmv==0)game->B->moveball();
+    }
+    else if(event->key() == Qt:: Key_Enter){
+        if(game->health->getHealth()==0||game->score->getScore()==56){
+            game->startgame=0;
+            game->scene->clear();
+            game->show();
+        }
     }
     int arr[27];
     arr[26]=Qt::Key_Space;
@@ -36,7 +43,8 @@ void Player::keyPressEvent(QKeyEvent *event)
             for (int j = 0; j < spaces; ++j) s+="  ";
 
             s+=arr[i];
-            game ->userinput(s);spaces++;
+            if(game->health->getHealth()==0||game->score->getScore()==56)
+                game ->userinput(s);spaces++;
         }
     }
 

@@ -37,3 +37,5 @@ RESOURCES += \
     res.qrc
 
 DISTFILES +=
+
+OTHER_FILES +=
