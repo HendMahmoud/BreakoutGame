@@ -13,14 +13,24 @@
 #include <QGraphicsTextItem>
 #include<QMediaPlayer>
 
-float ball::speed =1;
+float ball::speed;
 ball::ball()
 {
+    timer=new QTimer();
+    speed = 1;
+    dx=-1,dy=-1;
+    firsmv = 0 ;
     setPixmap(QPixmap(":/images/gray-2.png"));
     fallBall = new QMediaPlayer();
 }
 extern BodyGame * game ;
-QTimer * timer=new QTimer();
+//QTimer * timer=new QTimer();
+
+ball::~ball()
+{
+    delete timer;
+    delete fallBall;
+}
 
 void ball::moveball()
 {
@@ -30,8 +40,6 @@ void ball::moveball()
 
 }
 
-int dx=-1,dy=-1;
-bool firsmv = 0 ;
 
 void ball:: move(){
     QList <QGraphicsItem*> colliding_Items=collidingItems();
@@ -117,7 +125,7 @@ void ball:: move(){
     else if(game->health->getHealth() == 0){
         fallBall->setMedia(QUrl("qrc:/sounds/GameOver.wav"));
         fallBall->play();
-        game->scene->clear();
+//        game->scene->clear();
         game->finishView();
         }
     }

@@ -13,7 +13,7 @@ class BodyGame{
 public:
     QGraphicsScene *scene ;
     Player * player  ;
-    QGraphicsView * view ;
+
     Score *score;
 
     bool startgame;

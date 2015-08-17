@@ -7,6 +7,7 @@
 #include "startmenu.h"
 
 BodyGame * game ;
+QGraphicsView * view ;
 bool ballmove=0;
 
 int main(int argc, char *argv[])
@@ -15,6 +16,7 @@ int main(int argc, char *argv[])
     a.setApplicationName("Breakout Game");
     srand((unsigned)time(0));
 
+    view = new QGraphicsView();
     game = new BodyGame();
     game->show();
 

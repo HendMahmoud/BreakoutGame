@@ -10,13 +10,16 @@
 
 using namespace std ;
 
+extern QGraphicsView * view ;
+
 BodyGame::BodyGame(){
     startgame=0;
+//    scene->clear();
     scene = new QGraphicsScene();
     scene->setSceneRect(0, 0 , 1000, 700);//screen size
     QPixmap pim(":/images/bg_image.jpg");
     scene->setBackgroundBrush(pim);
-    view = new QGraphicsView();
+
     player = new Player();
     score = new Score();
     health = new Health();
@@ -28,8 +31,7 @@ extern bool ballmove;
 
 BodyGame::~BodyGame()
 {
-    delete scene;
-    delete view;
+    //scene->clear();
     delete player;
     delete score;
     delete health;
@@ -92,7 +94,7 @@ void BodyGame::finishView()
     //player -> setFocus();
 //    scene->clear();
     QGraphicsTextItem * text =new QGraphicsTextItem();
-    text->setPos(0,this->view->height()/4);
+    text->setPos(0,view->height()/4);
     if(health->getHealth()==0)
         text->setPlainText("\t\t\t\tGAME OVER");
     else text->setPlainText("\t\t\t\tYOU WIN");
@@ -100,22 +102,22 @@ void BodyGame::finishView()
     text->setFont(QFont("time", 40));
     scene->addItem(text);
     QGraphicsTextItem * text2 =new QGraphicsTextItem();
-    text2->setPos(0,this->view->height()/3);
-    text2->setPlainText("\n\t\t\t\ttype your user name: ");
+    text2->setPos(0,view->height()/3);
+    text2->setPlainText("\n\t\t\t\tPress enter to Back");
     text2->setDefaultTextColor(Qt:: black);
     text2->setFont(QFont("time", 20));
     scene->addItem(text2);
     view->setScene(scene);
     view -> show();
 }
-void BodyGame::userinput(QString s){
-    QGraphicsTextItem * text =new QGraphicsTextItem();
-    text->setPos(this->view->width()-this->view->width()/3-50,this->view->height()/3);
-    text->setPlainText("\n"+(QString)s);
-    text->setDefaultTextColor(Qt:: black);
-    text->setFont(QFont("time", 20));
-    scene->addItem(text);
-    view->setScene(scene);
-    view -> show();
+//void BodyGame::userinput(QString s){
+//    QGraphicsTextItem * text =new QGraphicsTextItem();
+//    text->setPos(view->width()-view->width()/3-50,view->height()/3);
+//    text->setPlainText("\n"+(QString)s);
+//    text->setDefaultTextColor(Qt:: black);
+//    text->setFont(QFont("time", 20));
+//    scene->addItem(text);
+//    view->setScene(scene);
+//    view -> show();
 
-}
+//}

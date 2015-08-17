@@ -7,9 +7,10 @@
 #include <QGraphicsRectItem>
 #include "bodygame.h"
 extern BodyGame * game;
+extern QGraphicsView * view ;
 StartMenu::StartMenu()
 {
-    setRect(game->view->width()/2-150,game->view->height()/4+150,10,10);
+    setRect(view->width()/2-150,view->height()/4+150,10,10);
 }
 
 void StartMenu::viewit()
@@ -18,18 +19,18 @@ void StartMenu::viewit()
     text->setPlainText("BREAKOUT");
     text->setDefaultTextColor(Qt:: blue);
     text->setFont(QFont("time", 80));
-    text->setPos(game->view->width()/5,game->view->height()/5);
+    text->setPos(view->width()/5,view->height()/5);
     game->scene->addItem(text);
-    game->view->setScene(game->scene);
-    game->view->show();
+    view->setScene(game->scene);
+    view->show();
     text=new QGraphicsTextItem();
     text->setPlainText("start game\nhow to play\nabout");
     text->setDefaultTextColor(Qt:: blue);
     text->setFont(QFont("time", 25));
-    text->setPos(game->view->width()/4+150,game->view->height()/4+130);
+    text->setPos(view->width()/4+150,view->height()/4+130);
     game->scene->addItem(text);
-    game->view->setScene(game->scene);
-    game->view->show();
+    view->setScene(game->scene);
+    view->show();
 }
 
 void StartMenu::keyPressEvent(QKeyEvent *event)

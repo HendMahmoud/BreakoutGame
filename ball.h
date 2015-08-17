@@ -9,9 +9,12 @@ class ball :public QObject,public QGraphicsPixmapItem
     Q_OBJECT
 public:
     QMediaPlayer *fallBall;
-
+    QTimer * timer;
     ball();
+    ~ball();
     void moveball();
+    int dx,dy;
+    bool firsmv;
     static float speed ;
 public slots:
     void move();

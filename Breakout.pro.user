@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< HEAD
-<!-- Written by QtCreator 2.7.0, 2015-08-13T21:59:44. -->
-=======
-<!-- Written by QtCreator 3.1.2, 2015-08-13T16:54:51. -->
->>>>>>> 511193fee66999a1b7a143c6e28bc5374ffb1553
+<!-- Written by QtCreator 2.7.0, 2015-08-17T00:19:45. -->
 <qtcreator>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -55,23 +51,13 @@
  <data>
   <variable>ProjectExplorer.Project.Target.0</variable>
   <valuemap type="QVariantMap">
-<<<<<<< HEAD
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 5.0.2 GCC 32bit</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 5.0.2 GCC 32bit</value>
    <value type="QByteArray" key="ProjectExplorer.ProjectConfiguration.Id">qt.502.gcc.essentials_kit</value>
-=======
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 5.3 GCC 64bit</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 5.3 GCC 64bit</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt.53.gcc_64_kit</value>
->>>>>>> 511193fee66999a1b7a143c6e28bc5374ffb1553
    <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
-<<<<<<< HEAD
-=======
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/amira3/Documents/BreakoutGame/build-Breakout-Desktop_Qt_5_3_GCC_64bit-Debug</value>
->>>>>>> 511193fee66999a1b7a143c6e28bc5374ffb1553
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -131,10 +117,6 @@
     <value type="bool" key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild">true</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
-<<<<<<< HEAD
-=======
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/amira3/Documents/BreakoutGame/build-Breakout-Desktop_Qt_5_3_GCC_64bit-Release</value>
->>>>>>> 511193fee66999a1b7a143c6e28bc5374ffb1553
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -241,12 +223,8 @@
     </valuelist>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Breakout</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
-<<<<<<< HEAD
     <value type="QByteArray" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/hend/Documents/games/Breakout/Breakout.pro</value>
     <value type="int" key="Qt4ProjectManager.Qt4RunConfiguration.BaseEnvironmentBase">2</value>
-=======
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/amira3/Documents/BreakoutGame/BreakoutGame/Breakout.pro</value>
->>>>>>> 511193fee66999a1b7a143c6e28bc5374ffb1553
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments"></value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">Breakout.pro</value>
     <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseDyldImageSuffix">false</value>
@@ -268,18 +246,10 @@
  </data>
  <data>
   <variable>ProjectExplorer.Project.Updater.EnvironmentId</variable>
-<<<<<<< HEAD
   <value type="QString">{e4a355d7-faca-456d-9a26-75f0e3ebd0d3}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.Updater.FileVersion</variable>
   <value type="int">12</value>
-=======
-  <value type="QByteArray">{c75c0ba9-2300-476b-8375-870fa14e6967}</value>
- </data>
- <data>
-  <variable>ProjectExplorer.Project.Updater.FileVersion</variable>
-  <value type="int">15</value>
->>>>>>> 511193fee66999a1b7a143c6e28bc5374ffb1553
  </data>
 </qtcreator>
