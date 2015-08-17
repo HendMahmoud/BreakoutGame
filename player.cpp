@@ -30,6 +30,8 @@ void Player::keyPressEvent(QKeyEvent *event)
     }
     else if(event->key() == Qt:: Key_Enter){
         if(game->health->getHealth()==0||game->score->getScore()==56){
+            QMediaPlayer * win = new QMediaPlayer();
+            win->setMedia(QUrl("qrc:/sounds/winner.wav"));
             game->startgame=0;
             game->scene->clear();
             game->show();
