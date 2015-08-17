@@ -75,7 +75,7 @@ void ball:: move(){
                 disconnect(timer,SIGNAL(timeout()),this,SLOT(move()));
                 // when Win
                 QMediaPlayer * win = new QMediaPlayer();
-                win->setMedia(QUrl("qrc:/sounds/winner"));
+                win->setMedia(QUrl("qrc:/sounds/winner.wav"));
                 win->play();
                 game->finishView();
             }

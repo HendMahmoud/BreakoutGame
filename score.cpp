@@ -2,7 +2,7 @@
 #include<QFont>
 #include<QMediaPlayer>
  Score::Score(QGraphicsItem *parent):QGraphicsTextItem(parent){
-    score = 0 ;
+    score = 55 ;
     setPos(x(), y());
     setPlainText("Score : "+QString :: number (score));
     setDefaultTextColor(Qt:: black);
