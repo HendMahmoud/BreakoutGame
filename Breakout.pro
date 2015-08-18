@@ -20,7 +20,8 @@ SOURCES += main.cpp \
     player.cpp \
     score.cpp \
     ball.cpp \
-    startmenu.cpp
+    startmenu.cpp \
+    howtoplay.cpp
 
 HEADERS  += \
     bodygame.h \
@@ -29,7 +30,8 @@ HEADERS  += \
     player.h \
     score.h \
     ball.h \
-    startmenu.h
+    startmenu.h \
+    howtoplay.h
 
 FORMS    += mainwindow.ui
 

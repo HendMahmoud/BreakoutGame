@@ -9,6 +9,8 @@
 #include"health.h"
 #include "ball.h"
 #include "score.h"
+#include"startmenu.h"
+
 class BodyGame{
 public:
     QGraphicsScene *scene ;
@@ -16,9 +18,9 @@ public:
 
     Score *score;
 
-    bool startgame;
+    int startgame;
     ball * B;
-
+   StartMenu * startmenu;
 
     BodyGame();
     ~BodyGame();

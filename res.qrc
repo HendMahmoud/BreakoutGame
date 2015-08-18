@@ -5,6 +5,7 @@
         <file>bg_image.jpg</file>
         <file>pc5xoMxcB.png</file>
         <file>gray-2.png</file>
+        <file>how to play.jpg</file>
     </qresource>
     <qresource prefix="/sounds">
         <file>GameOver.wav</file>
