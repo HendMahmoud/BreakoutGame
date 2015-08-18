@@ -9,16 +9,16 @@
 #include"health.h"
 #include "ball.h"
 #include "score.h"
+#include "startmenu.h"
 class BodyGame{
 public:
     QGraphicsScene *scene ;
     Player * player  ;
-
+    StartMenu *startmenu ;
     Score *score;
 
     bool startgame;
     ball * B;
-
 
     BodyGame();
     ~BodyGame();
@@ -28,6 +28,7 @@ public:
 
     void show();
     void finishView();
+    void keyPressEvent(QKeyEvent *event);
     void userinput(QString);
 };
 

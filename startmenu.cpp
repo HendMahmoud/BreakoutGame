@@ -36,16 +36,18 @@ void StartMenu::viewit()
 void StartMenu::keyPressEvent(QKeyEvent *event)
 {
 //    qDebug() <<"pressed";
-    if(event->key() == Qt :: Key_Up&&y()>0){
+    if(event->key() == Qt :: Key_Up &&y()>0){
         setPos(x(), y()-38);
     }
-    if(event->key() == Qt :: Key_Down&&y()<76){
+    if(event->key() == Qt :: Key_Down &&y()<76){
         setPos(x(), y()+38);
     }
-    if(event->key() == Qt :: Key_Enter){
-        game->startgame=1;
-        if(y()==0)//new game
+    if(event->key() == Qt:: Key_Return||event->key() == Qt:: Key_Enter){
+
+        if(y()==0){//new game
+            game->startgame=1;
             game->show();
+        }
         //else if(y()==38)//how to play
         //else if(y()==76)//about
 

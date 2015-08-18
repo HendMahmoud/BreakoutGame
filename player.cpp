@@ -30,18 +30,17 @@ void Player::keyPressEvent(QKeyEvent *event)
             if(game->B->firsmv==0)game->B->moveball();
         }
     }
-    else if(event->key() == Qt:: Key_Enter){
+    if(event->key() == Qt:: Key_Return||event->key() == Qt:: Key_Enter){
         if(game->health->getHealth()==0||game->score->getScore()==56){
-//            QMediaPlayer * win = new QMediaPlayer();
-//            win->setMedia(QUrl("qrc:/sounds/winner.wav"));
-//            win->play();
             game->startgame=0;
 //            game->scene->clear();
             delete game;
             BodyGame*game=new BodyGame();
             game->show();
+            }
         }
-    }
+
+
 //    int arr[27];
 //    arr[26]=Qt::Key_Space;
 //    for (int i = 0; i < 26; ++i) {

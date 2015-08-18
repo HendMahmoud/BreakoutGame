@@ -1,14 +1,10 @@
 #ifndef RECT_H
 #define RECT_H
 #include<QGraphicsPixmapItem>
-#include<QObject>
-class Player :public QObject,  public QGraphicsPixmapItem{
-    Q_OBJECT
+class Player : public QGraphicsPixmapItem{
     public:
         Player();
         void keyPressEvent(QKeyEvent *event);
-//    public slots :
-//        void spawn();
 private:
         int spaces;
 };

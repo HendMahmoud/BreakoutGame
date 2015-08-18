@@ -3,6 +3,7 @@
 #include <QGraphicsTextItem>
 #include <QGraphicsScene>
 #include <QFont>
+#include<QKeyEvent>
 #include "bodygame.h"
 
 #include "ball.h"
@@ -36,6 +37,7 @@ BodyGame::~BodyGame()
     delete score;
     delete health;
     delete B;
+    //delete startmenu;
 }
 
 void BodyGame :: creatingDiamonds(){
@@ -58,7 +60,9 @@ void BodyGame::show()
 
     if(startgame==0)//start menu
     {
-        StartMenu *startmenu =new StartMenu();
+//        StartMenu *old =startmenu;
+//        delete old;
+        startmenu =new StartMenu();
         scene->addItem(startmenu);
         startmenu->viewit();
         startmenu->setFlag(QGraphicsRectItem::ItemIsFocusable);
@@ -89,10 +93,9 @@ void BodyGame::show()
 
 void BodyGame::finishView()
 {
-    //player->flags();//QGraphicsRectItem::ItemIsFocusable);
-    //this -> setFlag(QGraphicsRectItem::ItemFocusable);
-    //player -> setFocus();
-//    scene->clear();
+    //player->setFlag(QGraphicsRectItem::ItemIsFocusable);
+
+    //scene->clear();
     QGraphicsTextItem * text =new QGraphicsTextItem();
     text->setPos(0,view->height()/4);
     if(health->getHealth()==0)
@@ -107,9 +110,13 @@ void BodyGame::finishView()
     text2->setDefaultTextColor(Qt:: black);
     text2->setFont(QFont("time", 20));
     scene->addItem(text2);
+//    text2 -> setFlag(QGraphicsRectItem::ItemIsFocusable);
+//    text2 -> setFocus();
     view->setScene(scene);
     view -> show();
 }
+
+
 //void BodyGame::userinput(QString s){
 //    QGraphicsTextItem * text =new QGraphicsTextItem();
 //    text->setPos(view->width()-view->width()/3-50,view->height()/3);
