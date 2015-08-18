@@ -10,15 +10,16 @@
 #include "ball.h"
 #include "score.h"
 #include "startmenu.h"
+
 class BodyGame{
 public:
     QGraphicsScene *scene ;
     Player * player  ;
-    StartMenu *startmenu ;
     Score *score;
 
-    bool startgame;
+    int startgame;
     ball * B;
+   StartMenu * startmenu;
 
     BodyGame();
     ~BodyGame();

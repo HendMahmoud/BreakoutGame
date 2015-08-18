@@ -5,7 +5,7 @@
 #include <QFont>
 #include<QKeyEvent>
 #include "bodygame.h"
-
+#include"howtoplay.h"
 #include "ball.h"
 #include "startmenu.h"
 
@@ -20,7 +20,7 @@ BodyGame::BodyGame(){
     scene->setSceneRect(0, 0 , 1000, 700);//screen size
     QPixmap pim(":/images/bg_image.jpg");
     scene->setBackgroundBrush(pim);
-
+    startmenu =new StartMenu();
     player = new Player();
     score = new Score();
     health = new Health();
@@ -60,8 +60,6 @@ void BodyGame::show()
 
     if(startgame==0)//start menu
     {
-//        StartMenu *old =startmenu;
-//        delete old;
         startmenu =new StartMenu();
         scene->addItem(startmenu);
         startmenu->viewit();
@@ -89,6 +87,16 @@ void BodyGame::show()
         view->setScene(scene);
         view -> show();
     }
+    else if (startgame==2)
+      {
+
+          howtoplay * b = new howtoplay();
+           scene->addItem(b);
+           view->setScene(scene);
+           b->setFlag(QGraphicsRectItem::ItemIsFocusable);
+           b-> setFocus();
+           view->show();
+      }
 }
 
 void BodyGame::finishView()

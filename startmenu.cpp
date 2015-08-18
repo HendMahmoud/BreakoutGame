@@ -24,7 +24,7 @@ void StartMenu::viewit()
     view->setScene(game->scene);
     view->show();
     text=new QGraphicsTextItem();
-    text->setPlainText("start game\nhow to play\nabout");
+    text->setPlainText("Start game\nHow to play\nExit");
     text->setDefaultTextColor(Qt:: blue);
     text->setFont(QFont("time", 25));
     text->setPos(view->width()/4+150,view->height()/4+130);
@@ -43,13 +43,18 @@ void StartMenu::keyPressEvent(QKeyEvent *event)
         setPos(x(), y()+38);
     }
     if(event->key() == Qt:: Key_Return||event->key() == Qt:: Key_Enter){
-
-        if(y()==0){//new game
+        if(y()==0)//new game
+        {
             game->startgame=1;
             game->show();
         }
-        //else if(y()==38)//how to play
-        //else if(y()==76)//about
 
+        else if(y()==38)//how to play
+        {
+            game->startgame=2;
+            game->show();
+        }
+        else if(y()==76)//exit
+            view->close();
     }
 }
