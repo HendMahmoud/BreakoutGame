@@ -16,6 +16,7 @@ public:
     QGraphicsScene *scene ;
     Player * player  ;
     Score *score;
+    QGraphicsTextItem * pusetext;
 
     int startgame;
     ball * B;

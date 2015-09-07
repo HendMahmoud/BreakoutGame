@@ -17,7 +17,7 @@ void StartMenu::viewit()
 {
     QGraphicsTextItem *text=new QGraphicsTextItem();
     text->setPlainText("BREAKOUT");
-    text->setDefaultTextColor(Qt:: blue);
+    text->setDefaultTextColor(Qt:: darkRed);
     text->setFont(QFont("time", 80));
     text->setPos(view->width()/5,view->height()/5);
     game->scene->addItem(text);
@@ -25,9 +25,9 @@ void StartMenu::viewit()
     view->show();
     text=new QGraphicsTextItem();
     text->setPlainText("Start game\nHow to play\nExit");
-    text->setDefaultTextColor(Qt:: blue);
+    text->setDefaultTextColor(Qt:: darkRed);
     text->setFont(QFont("time", 25));
-    text->setPos(view->width()/4+150,view->height()/4+130);
+    text->setPos(view->width()/4+130,view->height()/4+130);
     game->scene->addItem(text);
     view->setScene(game->scene);
     view->show();

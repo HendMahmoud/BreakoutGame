@@ -24,6 +24,7 @@ BodyGame::BodyGame(){
     player = new Player();
     score = new Score();
     health = new Health();
+    pusetext = new QGraphicsTextItem();
     view->setFixedSize(1000, 700);
     view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -73,7 +74,11 @@ void BodyGame::show()
         scene->clear();
         creatingDiamonds();
         B = new ball();
-
+        pusetext->setPos(view->width()-200,0);
+        pusetext->setPlainText("Press ESC to pause");
+        pusetext->setDefaultTextColor(Qt:: black);
+        pusetext->setFont(QFont("time",15));
+        scene->addItem(pusetext);
         scene -> addItem(player);
         scene -> addItem(B);
         scene -> addItem(score);
