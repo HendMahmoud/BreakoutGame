@@ -8,11 +8,14 @@
 #include "bodygame.h"
 extern BodyGame * game;
 extern QGraphicsView * view ;
+
+//constructor to intialize the winfow size
 StartMenu::StartMenu()
 {
     setRect(view->width()/2-150,view->height()/4+150,10,10);
 }
 
+//show and set the main menu screen
 void StartMenu::viewit()
 {
     QGraphicsTextItem *text=new QGraphicsTextItem();
@@ -33,6 +36,7 @@ void StartMenu::viewit()
     view->show();
 }
 
+//manage what will happen when moving the square and making choise in the main menu
 void StartMenu::keyPressEvent(QKeyEvent *event)
 {
 //    qDebug() <<"pressed";

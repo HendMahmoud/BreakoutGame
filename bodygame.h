@@ -17,21 +17,26 @@ public:
     Player * player  ;
     Score *score;
     QGraphicsTextItem * pusetext;
-
     int startgame;
     ball * B;
-   StartMenu * startmenu;
-
-    BodyGame();
-    ~BodyGame();
-    void creatingDiamonds() ;
-
+    StartMenu * startmenu;
     Health *health;
 
+    //constructor to intialize new game view
+    BodyGame();
+
+    //destructor
+    ~BodyGame();
+
+    //creats the diamonds in the new game
+    void creatingDiamonds() ;
+
+    //moving between main menu and new game screen and how to play screen
     void show();
+
+    //show to screen of the ending
     void finishView();
-    void keyPressEvent(QKeyEvent *event);
-    void userinput(QString);
+
 };
 
 #endif // BODYGAME_H

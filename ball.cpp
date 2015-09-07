@@ -14,6 +14,8 @@
 #include<QMediaPlayer>
 
 float ball::speed;
+
+
 ball::ball()
 {
     timer=new QTimer();
@@ -24,13 +26,14 @@ ball::ball()
     fallBall = new QMediaPlayer();
 }
 extern BodyGame * game ;
-//QTimer * timer=new QTimer();
+
 
 ball::~ball()
 {
     delete timer;
     delete fallBall;
 }
+
 
 void ball::moveball()
 {
@@ -65,7 +68,7 @@ void ball:: move(){
                 scene()->removeItem((colliding_Items[i]));
                 delete colliding_Items[i];
             }
-            if(game->score->getScore()%20==0&&timer->interval()-speed>0)
+            if(game->score->getScore()%10==0&&timer->interval()-speed>0)
             {
                 timer->setInterval(timer->interval()-speed);
                 speed+=0.5;

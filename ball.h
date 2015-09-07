@@ -10,13 +10,21 @@ class ball :public QObject,public QGraphicsPixmapItem
 public:
     QMediaPlayer *fallBall;
     QTimer * timer;
-    ball();
-    ~ball();
-    void moveball();
     int dx,dy;
     bool firsmv;
     static float speed ;
+
+    //constructor
+    ball();
+
+    //destructor
+    ~ball();
+
+    //start the move of the ball and intilize it's speed
+    void moveball();
+
 public slots:
+    //moving the ball when it touchs object or fail
     void move();
 };
 

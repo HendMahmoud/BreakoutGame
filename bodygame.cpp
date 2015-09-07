@@ -13,9 +13,9 @@ using namespace std ;
 
 extern QGraphicsView * view ;
 
+//constructor to intialize new game view
 BodyGame::BodyGame(){
     startgame=0;
-//    scene->clear();
     scene = new QGraphicsScene();
     scene->setSceneRect(0, 0 , 1000, 700);//screen size
     QPixmap pim(":/images/bg_image.jpg");
@@ -31,6 +31,7 @@ BodyGame::BodyGame(){
 }
 extern bool ballmove;
 
+//destructor
 BodyGame::~BodyGame()
 {
     //scene->clear();
@@ -41,6 +42,7 @@ BodyGame::~BodyGame()
     //delete startmenu;
 }
 
+//creats the diamonds in the new game
 void BodyGame :: creatingDiamonds(){
 
     Demond *demond;
@@ -55,7 +57,7 @@ void BodyGame :: creatingDiamonds(){
     }
  }
 
-
+//moving between main menu and new game screen and how to play screen
 void BodyGame::show()
 {
 
@@ -104,6 +106,7 @@ void BodyGame::show()
       }
 }
 
+//show to screen of the ending
 void BodyGame::finishView()
 {
     //player->setFlag(QGraphicsRectItem::ItemIsFocusable);
@@ -129,15 +132,3 @@ void BodyGame::finishView()
     view -> show();
 }
 
-
-//void BodyGame::userinput(QString s){
-//    QGraphicsTextItem * text =new QGraphicsTextItem();
-//    text->setPos(view->width()-view->width()/3-50,view->height()/3);
-//    text->setPlainText("\n"+(QString)s);
-//    text->setDefaultTextColor(Qt:: black);
-//    text->setFont(QFont("time", 20));
-//    scene->addItem(text);
-//    view->setScene(scene);
-//    view -> show();
-
-//}
